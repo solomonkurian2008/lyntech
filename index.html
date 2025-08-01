@@ -13,7 +13,7 @@
     }
 
     body {
-        font-family: 'Bookman Old Style', 'Georgia', serif;
+      font-family: 'Bookman Old Style', 'Georgia', serif;
       color: #333;
       background: linear-gradient(to bottom right, #e0f7fa, #ffffff);
     }
@@ -118,14 +118,6 @@
       padding-left: 20px;
     }
 
-    .testimonial {
-      background-color: #e3f2fd;
-      padding: 15px 20px;
-      border-left: 5px solid #1976d2;
-      margin-bottom: 15px;
-      border-radius: 4px;
-    }
-
     /* Footer */
     footer {
       background-color: #0d47a1;
@@ -204,10 +196,8 @@
   <!-- Navigation -->
   <nav>
     <ul>
-      <li><a href="#home">Home</a></li>
-      <li><a href="#services">Services</a></li>
+      <li><a href="#home">Home</a></li>      
       <li><a href="about.html">About Us</a></li>
-      <li><a href="#testimonials">Testimonials</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
   </nav>
@@ -220,6 +210,22 @@
 
   <!-- Content -->
   <div class="container">
+
+    <!-- New About Content Section -->
+    <section>
+      <h2>LynTech</h2>
+      <p><strong>Simplifying Broadcast Technology</strong></p>
+      <p>
+        We are specialized Broadcast IT and Media Technology solutions provider offering robust, scalable,
+        and future-ready systems for broadcasters, media houses, and production studios.
+      </p>
+      <p>
+        From Media Asset Management (MAM) installations to workflow design, training, and 24/7 technical support,
+        we help clients streamline their operations and stay ahead in a fast-evolving digital landscape.
+      </p>
+    </section>
+
+    <!-- Services -->
     <section id="services">
       <h2>Our Services</h2>
       <ul class="services">
@@ -230,18 +236,7 @@
       </ul>
     </section>
 
-    <section id="testimonials">
-      <h2>What Our Clients Say</h2>
-      <div class="testimonial">
-        "LynTech helped us migrate to AWS seamlessly. Their knowledge and support are unmatched."
-        <br><strong>- TechNova Solutions</strong>
-      </div>
-      <div class="testimonial">
-        "Professional, responsive, and truly experts in IT strategy. Highly recommended!"
-        <br><strong>- FinBridge Corp</strong>
-      </div>
-    </section>
-
+    <!-- Contact -->
     <section id="contact">
       <h2>Contact Us</h2>
       <p><strong>LynTech</strong></p>
@@ -254,6 +249,7 @@
       <p>Email: info@lyntech.in</p>
       <p>Phone: +91 9188662715</p>
     </section>
+
   </div>
 
   <!-- Footer -->
@@ -261,51 +257,48 @@
     &copy; 2025 LynTech. All rights reserved.
   </footer>
 
-<!-- Login Modal -->
-<div id="loginModal" class="modal">
-  <div class="modal-content">
-    <span class="close" onclick="closeLogin()">&times;</span>
-    <h3>Login to Your Account</h3>
-    <form id="loginForm">
-      <input type="text" name="customerId" id="customerId" placeholder="Customer ID" required pattern="[A-Za-z0-9]+" title="Customer ID must be alphanumeric" />
-      <input type="password" name="password" placeholder="Password" required />
-      <button type="submit">Login</button>
-      <p id="loginError" style="color: red; margin-top: 10px; display: none;">Invalid credentials. Please try again.</p>
-    </form>
+  <!-- Login Modal -->
+  <div id="loginModal" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeLogin()">&times;</span>
+      <h3>Login to Your Account</h3>
+      <form id="loginForm">
+        <input type="text" name="customerId" id="customerId" placeholder="Customer ID" required pattern="[A-Za-z0-9]+" title="Customer ID must be alphanumeric" />
+        <input type="password" name="password" placeholder="Password" required />
+        <button type="submit">Login</button>
+        <p id="loginError" style="color: red; margin-top: 10px; display: none;">Invalid credentials. Please try again.</p>
+      </form>
+    </div>
   </div>
-</div>
 
-<!-- Modal Script -->
-<script>
-  function openLogin() {
-    document.getElementById('loginModal').style.display = 'block';
-    document.getElementById('loginError').style.display = 'none';
-  }
-
-  function closeLogin() {
-    document.getElementById('loginModal').style.display = 'none';
-  }
-
-  window.onclick = function(event) {
-    const modal = document.getElementById('loginModal');
-    if (event.target == modal) {
-      modal.style.display = 'none';
+  <!-- Modal Script -->
+  <script>
+    function openLogin() {
+      document.getElementById('loginModal').style.display = 'block';
+      document.getElementById('loginError').style.display = 'none';
     }
-  };
 
-  // Fake login handling
-  document.getElementById('loginForm').addEventListener('submit', function(e) {
-    e.preventDefault(); // Stop form submission
-    const customerIdInput = document.getElementById('customerId');
-    if (!customerIdInput.checkValidity()) {
-      customerIdInput.reportValidity();
-      return;
+    function closeLogin() {
+      document.getElementById('loginModal').style.display = 'none';
     }
-    document.getElementById('loginError').style.display = 'block'; // Always show error
-  });
-</script>
 
+    window.onclick = function(event) {
+      const modal = document.getElementById('loginModal');
+      if (event.target == modal) {
+        modal.style.display = 'none';
+      }
+    };
 
+    document.getElementById('loginForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      const customerIdInput = document.getElementById('customerId');
+      if (!customerIdInput.checkValidity()) {
+        customerIdInput.reportValidity();
+        return;
+      }
+      document.getElementById('loginError').style.display = 'block';
+    });
+  </script>
 
 </body>
 </html>
