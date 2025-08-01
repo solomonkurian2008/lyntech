@@ -3,110 +3,228 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Simple Website</title>
+  <title>LynTech - IT Consulting</title>
   <style>
-    body {
-      font-family: Arial, sans-serif;
+    /* Global Reset */
+    * {
       margin: 0;
       padding: 0;
+      box-sizing: border-box;
     }
-    nav {
-      background-color: #333;
-      padding: 10px 20px;
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #f9f9f9;
+      line-height: 1.6;
+    }
+
+    header {
+      background-color: #1a1a1a;
       color: white;
+      padding: 10px 30px;
       display: flex;
       justify-content: space-between;
       align-items: center;
     }
-    nav a {
+
+    header h1 {
+      font-size: 24px;
+    }
+
+    nav {
+      background-color: #333;
+      padding: 12px 30px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+    }
+
+    nav ul li {
+      margin-left: 25px;
+    }
+
+    nav ul li a {
       color: white;
-      margin-left: 20px;
       text-decoration: none;
+      font-weight: 500;
+      transition: color 0.3s;
     }
+
+    nav ul li a:hover {
+      color: #00bcd4;
+    }
+
+    .login-btn {
+      background-color: #00bcd4;
+      color: white;
+      padding: 8px 16px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+
     .container {
-      padding: 40px;
+      padding: 50px 30px;
+      max-width: 1000px;
+      margin: auto;
     }
-    /* Modal Styles */
+
+    section {
+      margin-bottom: 60px;
+    }
+
+    footer {
+      background-color: #1a1a1a;
+      color: white;
+      padding: 20px 30px;
+      text-align: center;
+    }
+
+    /* Login Modal */
     .modal {
       display: none;
       position: fixed;
-      z-index: 999;
+      z-index: 2000;
       left: 0; top: 0;
       width: 100%; height: 100%;
-      background-color: rgba(0,0,0,0.6);
+      background-color: rgba(0, 0, 0, 0.6);
     }
+
     .modal-content {
       background-color: white;
       margin: 10% auto;
-      padding: 20px;
-      width: 300px;
-      border-radius: 8px;
+      padding: 30px;
+      border-radius: 10px;
+      width: 350px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+      position: relative;
     }
+
     .close {
-      float: right;
+      position: absolute;
+      top: 12px;
+      right: 16px;
       font-size: 20px;
+      color: #555;
       cursor: pointer;
     }
-    input[type="text"], input[type="password"] {
+
+    .modal-content h3 {
+      margin-bottom: 20px;
+      text-align: center;
+    }
+
+    .modal-content input[type="text"],
+    .modal-content input[type="password"] {
       width: 100%;
       padding: 10px;
-      margin: 8px 0;
-      box-sizing: border-box;
+      margin-bottom: 15px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
     }
-    button {
-      padding: 10px 20px;
-      background-color: #333;
-      color: white;
+
+    .modal-content button {
+      width: 100%;
+      padding: 10px;
+      background-color: #00bcd4;
       border: none;
+      color: white;
+      font-weight: bold;
+      border-radius: 5px;
       cursor: pointer;
+    }
+
+    .modal-content button:hover {
+      background-color: #0097a7;
     }
   </style>
 </head>
 <body>
 
+  <!-- Header -->
+  <header>
+    <h1>LynTech</h1>
+    <button class="login-btn" onclick="openLogin()">Login</button>
+  </header>
+
+  <!-- Navigation -->
   <nav>
-    <div><strong>My Website</strong></div>
-    <div>
-      <a href="#about-us">About Us</a>
-      <a href="#" onclick="document.getElementById('loginModal').style.display='block'">Login</a>
-    </div>
+    <ul>
+      <li><a href="#home">Home</a></li>
+      <li><a href="#services">Services</a></li>
+      <li><a href="about.html">About Us</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
   </nav>
 
-  <div class="container" id="about-us">
-    <h2>About Us</h2>
-    <p>
-      Welcome to our website! We are a small team of developers and designers passionate about creating simple,
-      user-friendly web experiences. Our goal is to make web technology accessible to everyone, whether you're 
-      launching a small project or scaling a business.
-    </p>
-    <p>
-      With years of experience in the tech industry, we strive to deliver quality, performance, and support 
-      in everything we do. We're excited to be part of your journey and hope our tools and services empower you 
-      to do more online.
-    </p>
+  <!-- Main Content -->
+  <div class="container" id="home">
+    <section>
+      <h2>Welcome to LynTech</h2>
+      <p>
+        At LynTech, we specialize in delivering cutting-edge IT consulting services that empower businesses to grow,
+        scale, and innovate. From cloud solutions to software architecture, our experts help you stay ahead of the
+        digital curve.
+      </p>
+    </section>
+
+    <section id="services">
+      <h2>Our Services</h2>
+      <ul>
+        <li>Cloud Infrastructure Consulting</li>
+        <li>Custom Software Development</li>
+        <li>DevOps and Automation</li>
+        <li>Security and Compliance</li>
+        <li>IT Strategy & Digital Transformation</li>
+      </ul>
+    </section>
+
+    <section id="contact">
+      <h2>Contact Us</h2>
+      <p>Email: contact@lyntech.com</p>
+      <p>Phone: +91 98765 43210</p>
+      <p>Address: Technopark, Trivandrum, India</p>
+    </section>
   </div>
+
+  <!-- Footer -->
+  <footer>
+    &copy; 2025 LynTech. All rights reserved.
+  </footer>
 
   <!-- Login Modal -->
   <div id="loginModal" class="modal">
     <div class="modal-content">
-      <span class="close" onclick="document.getElementById('loginModal').style.display='none'">&times;</span>
-      <h3>Login</h3>
+      <span class="close" onclick="closeLogin()">&times;</span>
+      <h3>Login to Your Account</h3>
       <form>
-        <label>Username:</label>
-        <input type="text" name="username" required />
-        <label>Password:</label>
-        <input type="password" name="password" required />
+        <input type="text" name="username" placeholder="Username" required />
+        <input type="password" name="password" placeholder="Password" required />
         <button type="submit">Login</button>
       </form>
     </div>
   </div>
 
   <script>
-    // Close modal when clicking outside of it
+    function openLogin() {
+      document.getElementById('loginModal').style.display = 'block';
+    }
+    function closeLogin() {
+      document.getElementById('loginModal').style.display = 'none';
+    }
+
     window.onclick = function(event) {
       const modal = document.getElementById('loginModal');
       if (event.target == modal) {
-        modal.style.display = "none";
+        modal.style.display = 'none';
       }
     };
   </script>
