@@ -5,7 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>LynTech - IT Consulting</title>
   <style>
-    /* Reset & Basics */
     * {
       margin: 0;
       padding: 0;
@@ -13,9 +12,10 @@
     }
 
     body {
-      font-family: 'Bookman Old Style', 'Georgia', serif;
+      font-family: 'Bookman Old Style', Georgia, serif;
       color: #333;
       background: linear-gradient(to bottom right, #e0f7fa, #ffffff);
+      line-height: 1.7;
     }
 
     a {
@@ -23,7 +23,6 @@
       color: inherit;
     }
 
-    /* Header */
     header {
       background-color: #0d47a1;
       color: white;
@@ -34,26 +33,30 @@
     }
 
     header h1 {
-      font-size: 28px;
+      font-size: 30px;
+      letter-spacing: 1px;
     }
 
     .login-btn {
       background-color: #00acc1;
       color: white;
-      padding: 10px 18px;
+      padding: 10px 20px;
       border: none;
       border-radius: 5px;
       cursor: pointer;
       font-weight: bold;
+      transition: background 0.3s;
     }
 
-    /* Navigation */
+    .login-btn:hover {
+      background-color: #0097a7;
+    }
+
     nav {
       background-color: #1976d2;
-      padding: 12px 40px;
+      padding: 15px 40px;
       display: flex;
-      justify-content: space-between;
-      align-items: center;
+      justify-content: center;
       position: sticky;
       top: 0;
       z-index: 1000;
@@ -62,46 +65,47 @@
     nav ul {
       list-style: none;
       display: flex;
-      gap: 30px;
+      gap: 40px;
     }
 
     nav ul li a {
       color: white;
-      font-weight: 500;
-      transition: 0.3s;
+      font-weight: bold;
+      font-size: 16px;
+      transition: color 0.3s;
     }
 
     nav ul li a:hover {
       color: #ffee58;
     }
 
-    /* Hero */
     .hero {
       text-align: center;
-      padding: 60px 20px;
+      padding: 80px 20px;
       background: linear-gradient(to right, #00bcd4, #1de9b6);
       color: white;
     }
 
     .hero h2 {
-      font-size: 40px;
+      font-size: 42px;
       margin-bottom: 20px;
     }
 
     .hero p {
-      font-size: 18px;
+      font-size: 20px;
+      max-width: 800px;
+      margin: auto;
     }
 
-    /* Main Content */
     .container {
-      padding: 50px 40px;
+      padding: 60px 40px;
       max-width: 1100px;
       margin: auto;
       background-color: white;
-      box-shadow: 0 0 10px rgba(0,0,0,0.05);
-      border-radius: 8px;
-      margin-top: -30px;
-      margin-bottom: 60px;
+      box-shadow: 0 0 12px rgba(0, 0, 0, 0.05);
+      border-radius: 10px;
+      margin-top: -40px;
+      margin-bottom: 80px;
     }
 
     section {
@@ -110,30 +114,41 @@
 
     section h2 {
       color: #0d47a1;
+      font-size: 26px;
       margin-bottom: 20px;
+      border-bottom: 2px solid #1976d2;
+      display: inline-block;
+      padding-bottom: 6px;
     }
 
     ul.services {
       list-style-type: square;
-      padding-left: 20px;
+      padding-left: 25px;
+      font-size: 17px;
     }
 
-    /* Footer */
+    section p {
+      font-size: 18px;
+      margin-bottom: 15px;
+    }
+
     footer {
       background-color: #0d47a1;
       color: white;
       text-align: center;
-      padding: 20px;
+      padding: 25px 10px;
+      font-size: 15px;
     }
 
-    /* Modal */
     .modal {
       display: none;
       position: fixed;
       z-index: 2000;
-      left: 0; top: 0;
-      width: 100%; height: 100%;
-      background-color: rgba(0,0,0,0.6);
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.6);
     }
 
     .modal-content {
@@ -143,7 +158,7 @@
       width: 350px;
       border-radius: 10px;
       position: relative;
-      box-shadow: 0 0 20px rgba(0,0,0,0.3);
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
     }
 
     .close {
@@ -196,7 +211,7 @@
   <!-- Navigation -->
   <nav>
     <ul>
-      <li><a href="#home">Home</a></li>      
+      <li><a href="#home">Home</a></li>
       <li><a href="about.html">About Us</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
@@ -211,17 +226,19 @@
   <!-- Content -->
   <div class="container">
 
-    <!-- New About Content Section -->
+    <!-- About Section -->
     <section>
       <h2>LynTech</h2>
       <p><strong>Simplifying Broadcast Technology</strong></p>
       <p>
-        We are specialized Broadcast IT and Media Technology solutions provider offering robust, scalable,
-        and future-ready systems for broadcasters, media houses, and production studios.
+        At LynTech, we bring deep expertise in broadcast IT and media technology to the forefront of digital transformation.
+        Our mission is to provide tailored solutions that align with your technical goals and business vision.
       </p>
       <p>
-        From Media Asset Management (MAM) installations to workflow design, training, and 24/7 technical support,
-        we help clients streamline their operations and stay ahead in a fast-evolving digital landscape.
+        We are a specialized provider offering robust, scalable, and future-ready systems for broadcasters, media houses, and production studios. Our approach is agile, our solutions are reliable, and our focus is entirely on enabling efficiency.
+      </p>
+      <p>
+        From Media Asset Management (MAM) installations to customized workflow design, hands-on training, and 24/7 technical support — we ensure our clients stay ahead in a fast-evolving media landscape.
       </p>
     </section>
 
@@ -229,10 +246,10 @@
     <section id="services">
       <h2>Our Services</h2>
       <ul class="services">
-        <li>Broadcast IT Solutions</li>
-        <li>MAM Installation & Configuration</li>
-        <li>Training</li>
-        <li>Support Services</li>
+        <li>Broadcast IT Solutions tailored to your infrastructure</li>
+        <li>End-to-end MAM Installation & Configuration</li>
+        <li>Customized Training Programs for Operations Teams</li>
+        <li>Comprehensive Support Services and SLAs</li>
       </ul>
     </section>
 
@@ -241,13 +258,11 @@
       <h2>Contact Us</h2>
       <p><strong>LynTech</strong></p>
       <p>Vazhoor Block Office, 11/565/A</p>
-      <p>Karamullil Building</p>
-      <p>Kodungoor Manimala Road</p>
+      <p>Karamullil Building, Kodungoor Manimala Road</p>
       <p>Chamampathal, Vazhoor</p>
-      <p>Kottayam, Kerala, Pin-686504</p>
-      <p><br></p>
-      <p>Email: info@lyntech.in</p>
-      <p>Phone: +91 9188662715</p>
+      <p>Kottayam, Kerala, Pin - 686504</p>
+      <p style="margin-top: 15px;">Email: <a href="mailto:info@lyntech.in">info@lyntech.in</a></p>
+      <p>Phone: <a href="tel:+919188662715">+91 9188662715</a></p>
     </section>
 
   </div>
