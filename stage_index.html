@@ -106,6 +106,10 @@
     .bullet{position:absolute;left:6px;top:4px;width:20px;height:20px;border-radius:50%;background:var(--brand);box-shadow:0 4px 12px rgba(43,108,176,0.18)}
     .step h4{margin:0 0 6px 0;color:var(--text)}
 
+    /* Implementation Flow grid (timeline + image) */
+    .flow-grid{display:grid;grid-template-columns:1fr 360px;gap:20px;align-items:start}
+    @media (max-width:1080px){ .flow-grid{grid-template-columns:1fr} }
+
     /* CONTACT */
     .contact{display:grid;grid-template-columns:1fr 420px;gap:32px;align-items:start}
     .info{background:var(--card);border-radius:12px;padding:20px;border:1px solid rgba(15,23,42,0.04);box-shadow:var(--shadow)}
@@ -214,7 +218,8 @@
       </article>
 
       <aside class="card" aria-hidden="true">
-        <div class="placeholder" role="img" aria-label="About image placeholder" style="min-height:360px"><img src="lyntechabout.png" alt="About LynTech" /></div>        
+        <div class="placeholder" role="img" aria-label="About image placeholder" style="min-height:360px"><!-- optional: replace with <img src="your-about-image.png"> --></div>
+        <p class="muted center mt-8">Team / studio / workflow photo (placeholder)</p>
       </aside>
     </div>
   </section>
@@ -251,30 +256,44 @@
         </div>
       </div>
 
-      <!-- Implementation flow -->
+      <!-- Implementation flow with right-hand image placeholder -->
       <div class="mt-8 card" style="margin-top:24px">
         <h3 style="margin-bottom:12px">Implementation Flow (visual)</h3>
-        <div class="timeline">
-          <div class="step">
-            <span class="bullet" aria-hidden="true"></span>
-            <h4>Discovery</h4>
-            <div class="muted">[ Placeholder for process note ]</div>
+
+        <!-- New grid: timeline on the left, image placeholder on the right -->
+        <div class="flow-grid" role="group" aria-label="Implementation flow and diagram">
+          <div>
+            <div class="timeline">
+              <div class="step">
+                <span class="bullet" aria-hidden="true"></span>
+                <h4>Discovery</h4>
+                <div class="muted">[ Placeholder for process note ]</div>
+              </div>
+              <div class="step">
+                <span class="bullet" aria-hidden="true"></span>
+                <h4>Design</h4>
+                <div class="muted">[ Placeholder for process note ]</div>
+              </div>
+              <div class="step">
+                <span class="bullet" aria-hidden="true"></span>
+                <h4>Deployment</h4>
+                <div class="muted">[ Placeholder for process note ]</div>
+              </div>
+              <div class="step">
+                <span class="bullet" aria-hidden="true"></span>
+                <h4>Training &amp; Support</h4>
+                <div class="muted">[ Placeholder for process note ]</div>
+              </div>
+            </div>
           </div>
-          <div class="step">
-            <span class="bullet" aria-hidden="true"></span>
-            <h4>Design</h4>
-            <div class="muted">[ Placeholder for process note ]</div>
-          </div>
-          <div class="step">
-            <span class="bullet" aria-hidden="true"></span>
-            <h4>Deployment</h4>
-            <div class="muted">[ Placeholder for process note ]</div>
-          </div>
-          <div class="step">
-            <span class="bullet" aria-hidden="true"></span>
-            <h4>Training &amp; Support</h4>
-            <div class="muted">[ Placeholder for process note ]</div>
-          </div>
+
+          <aside aria-hidden="true">
+            <!-- image placeholder to the right -->
+            <div class="placeholder" style="min-height:240px">
+              [ Implementation diagram / Architecture Image Placeholder ]
+            </div>
+            <p class="muted center mt-8">Replace with a diagram (e.g. architecture, workflow or screenshot)</p>
+          </aside>
         </div>
       </div>
     </div>
@@ -296,8 +315,31 @@
           <li>Phone: <a href="tel:+919188662715">+91 9188662715</a></li>
         </ul>
 
+        <!-- Embedded OpenStreetMap (free) -->
         <div class="mt-8">
-          <div class="placeholder" style="min-height:180px">[ Static Map / Office Photo ]</div>
+          <!--
+            OpenStreetMap embed:
+            - Replace marker coordinates (mlat / mlon and marker=LAT%2CLON) below with YOUR coordinates.
+            - To get coordinates: open https://www.openstreetmap.org, search your address, right-click the map point -> 'Show address' or copy coordinates from URL.
+          -->
+          <div style="border-radius:10px;overflow:hidden;border:1px solid rgba(15,23,42,0.04);box-shadow:var(--shadow)">
+            <iframe
+              id="osmMap"
+              width="100%"
+              height="320"
+              frameborder="0"
+              scrolling="no"
+              marginheight="0"
+              marginwidth="0"
+              src="https://www.openstreetmap.org/export/embed.html?bbox=76.5200%2C9.5900%2C76.5400%2C9.6100&amp;layer=mapnik&amp;marker=9.5947%2C76.5292"
+              aria-label="Office location map">
+            </iframe>
+          </div>
+
+          <p class="muted mt-4">
+            View on
+            <a href="https://www.openstreetmap.org/?mlat=9.5947&mlon=76.5292#map=15/9.5947/76.5292" target="_blank" rel="noopener">OpenStreetMap</a>
+          </p>
         </div>
       </div>
 
@@ -367,4 +409,3 @@
   </script>
 </body>
 </html>
-
