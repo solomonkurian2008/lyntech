@@ -225,10 +225,14 @@
       .stats{grid-template-columns:repeat(2,1fr)}
       .footer-grid{grid-template-columns:1fr 1fr}
     }
-    @media (max-width:640px){
-      .nav-links{display:none}
-      section{padding-block:40px}
+    @media (max-width: 640px) {
+    .nav-links {
+      display: flex !important; /* force it to stay visible */
+      flex-wrap: wrap;
+      gap: 10px;
+      justify-content: flex-end;
     }
+  }
   </style>
 </head>
 <body>
