@@ -110,6 +110,32 @@
     .bullet{position:absolute;left:6px;top:4px;width:20px;height:20px;border-radius:50%;background:var(--brand);box-shadow:0 4px 12px rgba(43,108,176,0.18)}
     .step h4{margin:0 0 6px 0;color:var(--text)}
 
+    /* LOGIN MODAL */
+      .modal-overlay {
+        position: fixed;
+        inset: 0;
+        background: rgba(15, 23, 42, 0.6);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 100;
+      }
+      
+      .modal {
+        background: var(--card);
+        padding: 22px;
+        border-radius: 14px;
+        max-width: 360px;
+        width: 90%;
+        box-shadow: var(--shadow);
+        animation: fadeIn 0.25s ease-out;
+      }
+      
+      @keyframes fadeIn {
+        from { opacity: 0; transform: translateY(-10px); }
+        to { opacity: 1; transform: translateY(0); }
+      }
+
         /* IMAGE SHOWCASE */
     .image-grid {
       display: grid;
@@ -200,7 +226,7 @@
         <a href="#about">About Us</a>
         <a href="#services">Services</a>
         <a href="#contact">Contact</a>
-        <a href="#login" class="btn btn-ghost">Login</a>
+        <a href="#login" class="btn btn-ghost" onclick="openLoginModal(event)">Login</a>
       </div>
     </div>
   </nav>
@@ -504,6 +530,31 @@
     <a href="#home" class="btn btn-primary" title="Back to top">↑ Top</a>
   </div>
 
+  <!-- LOGIN MODAL -->
+<div id="loginModal" class="modal-overlay" style="display:none">
+  <div class="modal">
+    <h3 style="font-weight:800;margin-bottom:12px">Customer Login</h3>
+    <form id="loginForm">
+      <div class="field">
+        <label for="customerId">Customer ID</label>
+        <input id="customerId" name="customerId" type="text" placeholder="Enter Customer ID" required>
+      </div>
+
+      <div class="field">
+        <label for="password">Password</label>
+        <input id="password" name="password" type="password" placeholder="Enter Password" required>
+      </div>
+
+      <button type="submit" class="btn btn-primary" style="width:100%">Login</button>
+      <p id="login-error" class="muted" style="color:red;margin-top:10px;display:none;">
+        ❌ Invalid user credentials.
+      </p>
+    </form>
+    <button onclick="closeLoginModal()" class="btn btn-ghost" style="margin-top:12px;width:100%">Close</button>
+  </div>
+</div>
+
+
   <script>
     // demo form handler - replace with your backend submission
     function handleDemoForm(e){
@@ -514,5 +565,25 @@
       document.getElementById('contactForm').reset();
     }
   </script>
+  <script>
+function openLoginModal(e) {
+  e.preventDefault();
+  document.getElementById('loginModal').style.display = 'flex';
+}
+
+function closeLoginModal() {
+  document.getElementById('loginModal').style.display = 'none';
+  document.getElementById('loginForm').reset();
+  document.getElementById('login-error').style.display = 'none';
+}
+
+// Fake login check
+document.getElementById('loginForm').addEventListener('submit', function(event) {
+  event.preventDefault();
+  // Always show invalid for now
+  document.getElementById('login-error').style.display = 'block';
+});
+</script>
+
 </body>
 </html>
