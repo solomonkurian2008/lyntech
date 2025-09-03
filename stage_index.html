@@ -233,6 +233,17 @@
       justify-content: flex-end;
     }
   }
+    /* Mobile nav tweak: show only Login */
+    @media (max-width: 640px) {
+      .nav-links a {
+        display: none;
+      }
+      .nav-links a.btn.btn-ghost {
+        display: inline-flex; /* Show login */
+        margin-left: auto; /* Push it right */
+      }
+    }
+
   </style>
 </head>
 <body>
