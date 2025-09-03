@@ -110,6 +110,47 @@
     .bullet{position:absolute;left:6px;top:4px;width:20px;height:20px;border-radius:50%;background:var(--brand);box-shadow:0 4px 12px rgba(43,108,176,0.18)}
     .step h4{margin:0 0 6px 0;color:var(--text)}
 
+        /* IMAGE SHOWCASE */
+    .image-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+      margin-top: 24px;
+    }
+    .image-grid figure {
+      background: var(--card);
+      border: 1px solid rgba(15,23,42,0.04);
+      border-radius: 12px;
+      box-shadow: var(--shadow);
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    .image-grid img {
+      width: 100%;
+      height: 220px;
+      object-fit: cover;
+    }
+    .image-grid figcaption {
+      text-align: center;
+      padding: 12px;
+      font-weight: 600;
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+    
+    @media (max-width: 960px) {
+      .image-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+    @media (max-width: 640px) {
+      .image-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
     /* Implementation Flow grid (timeline + image) */
     .flow-grid{display:grid;grid-template-columns:1fr 360px;gap:20px;align-items:start}
     @media (max-width:1080px){ .flow-grid{grid-template-columns:1fr} }
@@ -255,6 +296,30 @@
           <p class="muted">Responsive support to protect uptime and performance.</p>
         </div>
       </div>
+
+        <!-- IMAGE SHOWCASE -->
+      <section id="showcase">
+        <div class="container">
+          <h2 class="section-title center">Our Work in Action</h2>
+          <p class="section-sub center">A glimpse of our broadcast workflow solutions and integrations.</p>
+    
+          <div class="image-grid">
+            <figure>
+              <img src="Firefly_gemini-flash_remove Galaxy and put LynTech. Avoid all humans sitting in chair. Make it bit more br 306074.png
+" alt="Broadcast workflow setup" />
+              <figcaption>Seamless Media Asset Management</figcaption>
+            </figure>
+            <figure>
+              <img src="Firefly_gemini-flash_avoid humans 306074.png" alt="Control room setup" />
+              <figcaption>Optimized Control Room Operations</figcaption>
+            </figure>
+            <figure>
+              <img src="Firefly_gemini-flash_I am running a company, which gives services for tv stations on Media Asset Managemen 306074.png" alt="Support and training session" />
+              <figcaption>Hands-on Training & 24/7 Support</figcaption>
+            </figure>
+          </div>
+        </div>
+      </section>
 
       <!-- Implementation flow with right-hand image placeholder -->
       <div class="mt-8 card" style="margin-top:24px">
