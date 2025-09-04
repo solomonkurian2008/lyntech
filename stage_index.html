@@ -510,7 +510,7 @@
         method: form.method,
         body: formData,
       });
-
+  alert(JSON.stringify(response));
       if (response.ok) {
         form.reset(); // Reset the form after a successful submission
         status.style.display = "block"; // Show success message
